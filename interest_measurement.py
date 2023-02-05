@@ -1,3 +1,6 @@
+import math
+
+
 # This function determine the effective rate of interest
 def effective_rate_of_interest(a_t, a_t_m_1):
     i_t = (a_t - a_t_m_1) / a_t_m_1
@@ -8,6 +11,17 @@ def effective_rate_of_interest(a_t, a_t_m_1):
 def effective_rate_of_discount(a_t, a_t_m_1):
     d_t = (a_t - a_t_m_1) / a_t
     return d_t
+
+
+# This is the accumulation function
+def accumulation(rate, time, type_of_rate):
+    if type_of_rate == 'interest':
+        a = (1 + rate) ** time
+    elif type_of_rate == 'discount':
+        a = (1 - rate) ** (- time)
+    else:
+        a = math.exp(time * rate)
+    return a
 
 
 # This function calculate the accumulated value
@@ -28,7 +42,7 @@ def discount_to_interest_converter(d):
     return i
 
 
-# This function convert effective annual rate of interest to nominal periodic rate
+# This function convert effective annual rate of interest to nominal rate
 def nominal_to_effective_interest_rate(i, m):
     i_m = m * ((1 + i) ** (1 / m) - 1)
     return i_m
