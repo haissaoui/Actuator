@@ -19,6 +19,8 @@ def accumulation(rate, time, type_of_rate):
         a = (1 + rate) ** time
     elif type_of_rate == 'discount':
         a = (1 - rate) ** (- time)
+    elif type_of_rate == 'simple':
+        a = 1 + rate * time
     else:
         a = math.exp(time * rate)
     return a
