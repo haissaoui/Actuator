@@ -1,4 +1,5 @@
 import math
+import numpy
 
 
 # This function determine the effective rate of interest
