@@ -1,5 +1,6 @@
 import math
-import numpy
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 # This function determine the effective rate of interest
@@ -49,3 +50,14 @@ def discount_to_interest_converter(d):
 def nominal_to_effective_interest_rate(i, m):
     i_m = m * ((1 + i) ** (1 / m) - 1)
     return i_m
+
+
+# Drawing interest curve
+i = 0.1
+d = 0.1
+x = np.linspace(0, 10, 100)
+y = np.exp(np.log(1+i)*x)
+plt.plot(x, y, 'r')
+y = np.exp(np.log(1 / (1-d))*x)
+plt.plot(x, y, 'r')
+plt.show()
