@@ -19,4 +19,3 @@ $PMT = \frac{-FV - PV \times (1 + i)^n}{\frac{(1 + i)^n - 1}{i}}$
 ## Case 4 : Unknown N:
 $n = \frac{\ln(\frac{FV+\frac{PMT}{i}}{PV + \frac{PMT}{i}})}{\ln(1 + i)}$
 ## Case 5 : Unknown I/Y:
-$i = (\frac{FV+\frac{PMT}{i}}{PV + \frac{PMT}{i}})^\frac{1}{n}$
