@@ -19,3 +19,16 @@ $PMT = \frac{-FV - PV \times (1 + i)^n}{\frac{(1 + i)^n - 1}{i}}$
 ## Case 4 : Unknown N:
 $n = \frac{\ln(\frac{FV+\frac{PMT}{i}}{PV + \frac{PMT}{i}})}{\ln(1 + i)}$
 ## Case 5 : Unknown I/Y:
+To solve for i, we need to use numerical methods such as the bisection method:
+### Bisection method:
+The bisection method is a simple numerical algorithm used to find the root of a function. The algorithm works by initially setting two endpoints, $a$ and $b$, on either side of the root. The midpoint $c$ is then calculated and used to evaluate the function at that point. Depending on the sign of the function value at $c$, the interval $[a, c]$ or $[c, b]$ is selected as the new interval containing the root. This process is repeated iteratively until the interval containing the root is found to within a specified tolerance.
+
+Here is a step-by-step description of the bisection method as an algorithm:
+
+1. Set the initial endpoints $a$ and $b$ on either side of the root.
+2. Calculate the midpoint $c$ as $c = (a + b) / 2$.
+3. Evaluate the function $f$ at $c$.
+4 If $f(c)$ is equal to zero or within a specified tolerance, then stop and return c as the root.
+5. If $f(c)$ has the same sign as $f(a)$, set $a = c$, otherwise set $b = c$.
+6. Go back to step 2 and repeat until the interval containing the root is found to within a specified tolerance.
+The bisection method is guaranteed to converge to a root if the function is continuous and changes sign over the interval $[a, b]$. However, it can be slow to converge for some functions and may require a large number of iterations to achieve the desired tolerance.
